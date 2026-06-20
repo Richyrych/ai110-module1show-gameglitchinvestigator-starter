@@ -6,20 +6,22 @@
 
 ## Agent Workflow (SF8)
 
-> Document your experience using an AI agent (e.g., Cursor Agent, Claude, Copilot) to make multi-step changes autonomously.
+I submitted a prompt to Claude to add a feature that will display 
+the guess history to the user as an array on the UI, beyond the debug history (which did not update prooperly).
 
 **What task did you give the agent?**
 
-<!-- Describe the goal you asked the agent to accomplish -->
+Here is the actual prompt:
+    I want to implement a new feature in which the user can see the history of guesses within a game session.  There is a field for History on the UI, but nothing is displayed.  The user should see the state update with each guess, displaying the numerical choice as an array under History.  The array should clear and reset upon each rerun when a new game is started.
 
 **What did the agent do?**
 
-<!-- List the steps the agent took (files edited, commands run, etc.) -->
+The agent said the plumbing is already in place, and created a helper function to render the history on the UI and prevent stale data.
 
 **What did you have to verify or fix manually?**
 
-<!-- Describe anything the agent got wrong or that required human review -->
-
+It was a simple fix, I did not have to add manually but I did look at the files and confirm on the web app.
+The agent modified app.py and added the helper function.
 ---
 
 ## Test Generation (SF7)

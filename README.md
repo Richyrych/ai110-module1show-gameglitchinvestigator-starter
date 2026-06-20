@@ -33,21 +33,28 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Select a Difficulty
+2. Select Show Hints- enable or disable
+3. Enter a number and submit
+4. If the guess in incorrect, follow the hint(if using) for the next guess
+5. When the game is complete, select New Game
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+~/D/C/ai110-module1show-gameglitchinvestigator-starter main*
+.venv ❯ pytest
+========================== test session starts ===========================
+platform linux -- Python 3.13.14, pytest-9.0.3, pluggy-1.6.0
+rootdir: /home/richarddevitt/Documents/CodePath AI 110/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.13.0
+collected 3 items                                                        
+
+tests/test_game_logic.py ...                                       [100%]
+
+=========================== 3 passed in 0.01s ============================
+
 
 ## 🚀 Stretch Features
 

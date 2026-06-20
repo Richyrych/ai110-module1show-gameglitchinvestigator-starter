@@ -20,10 +20,10 @@ def parse_guess(raw: str):
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
     if raw is None:
-        return False, None, "Enter a guess."
+        return False, None, "You must enter a valid number."
 
     if raw == "":
-        return False, None, "Enter a guess."
+        return False, None, "You must enter a valid number."
 
     try:
         if "." in raw:
@@ -31,7 +31,7 @@ def parse_guess(raw: str):
         else:
             value = int(raw)
     except Exception:
-        return False, None, "That is not a number."
+        return False, None, "You must enter a valid number."
 
     return True, value, None
 

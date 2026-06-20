@@ -50,6 +50,16 @@ if "status" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
+
+def render_history():
+    """Show the running list of guesses for this game session."""
+    st.subheader("History")
+    if st.session_state.history:
+        st.write(st.session_state.history)
+    else:
+        st.caption("No guesses yet.")
+
+
 st.subheader("Make a guess")
 
 st.info(
@@ -95,6 +105,7 @@ if st.session_state.status != "playing":
         st.success("You already won. Start a new game to play again.")
     else:
         st.error("Game over. Start a new game to try again.")
+    render_history()
     st.stop()
 
 if submit:
@@ -136,6 +147,8 @@ if submit:
                     f"The secret was {st.session_state.secret}. "
                     f"Score: {st.session_state.score}"
                 )
+
+render_history()
 
 st.divider()
 st.caption("Built by an AI that claims this code is production-ready.")
