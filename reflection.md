@@ -8,15 +8,23 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+1. If input is higher than secret value, user is told to GO HIGHER!  Should be told to go lower.
+
+2. Once game is finished, the message instructs user to start a new game, however, clicking on "New Game" does not clear the current game.
+
+3. If input is lower than secret, user is told to GO LOWER!  Should be told to go higher.
+
+
+
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| 60|             GO LOWER  |GO HIGHER       |                         |
+| 10|   GO HIGHER             | GO LOWER           |                   |
+| Click "Start New Game"| Data is cleared, new game starts| no change | |
 
 ---
 
