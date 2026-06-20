@@ -34,6 +34,14 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+I used Claude Code directly in the IDE.  I referenced specific files
+and tried to be as specific and intentional as I could.  I separated
+instructions, but could have been better about that.  I Asked Claude
+to fix the bugs in one command, whereas maybe I should have separated those instructiosn to reduce the chance for errors.
+I also asked Claude to refactor and separate the logic from the state/UI and update the imports.  Claude found a few more bugs as well, like a discrepancy in which the number of attempts was intialized at 1 and elsewhere it was at 0.  
+I verified the results with pytest, first Claude ran its own and then I ran one manually.  I found I had to add a conftest.py file 
+in the root folder to run it.
+
 ---
 
 ## 3. Debugging and testing your fixes
@@ -42,13 +50,14 @@ Document at least 3 bugs you found. Add rows as needed.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
-
+I ran pytest, both with Claude and in my own terminal.
+I also ran the application and used it and tested as a user.
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+Great questions.  I don't know that I got a deep understanding of streamlit specifically here.  From what I saw, the session is not too different from express or other web-based session in which state is maintained and modified based on user input.  The UI functions manipulate the state directly, and they call on the backend logic to decide what to do with the state. 
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -57,3 +66,5 @@ Document at least 3 bugs you found. Add rows as needed.
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+I absolutely will be more specific and intentional in how I prompt the agent in checking for bugs.
+Next time I use AI in a project, I will do better to separate commands and prompts to focus on one specific task at a time.
